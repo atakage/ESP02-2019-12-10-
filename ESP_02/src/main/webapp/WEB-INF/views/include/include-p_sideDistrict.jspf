@@ -1,0 +1,80 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='p_sideDistrict.css'>
+    
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+              <script src="p_sideDistrict.js"></script>
+</head>
+
+<body>
+
+
+               
+          
+                        
+                        
+                      
+
+
+
+
+                            
+
+       <div class="columnSide">
+
+
+                     <a class="districtTitle">-지역별 정책-</a> 
+
+        <div class="columnSideDistrict">
+
+              <a href="#" class="columnSideDistrictMenu">광역시별</a>
+
+                <div class="columnSideDistrictDrop">
+                <a href="${rootPath}/esp/area/seoul" class="columnSideDistrictB" id="sideSeoul">-서울특별시</a>
+                <a href="#" class="columnSideDistrictB">-인천광역시</a>
+                <a href="#" class="columnSideDistrictB">-부산광역시</a>
+                <a href="#" class="columnSideDistrictB">-대전광역시</a>
+                <a href="#" class="columnSideDistrictB">-광주광역시</a>
+                <a href="#" class="columnSideDistrictB">-울산광역시</a>
+                <a href="#" class="columnSideDistrictB">-대구광역시</a>
+               </div>
+                
+         </div>
+
+         <div class="columnSideProvince">
+
+                <a href="#" class="columnSideProvinceMenu">도별</a> 
+                
+                <div class="columnSideProvinceDrop">
+                <a href="${rootPath}/esp/area/gyeonggi" class="columnSideProvinceB" id="sideGyeonggi">-경기도</a>
+                <a href="#" class="columnSideProvinceB">-강원도</a>
+                <a href="#" class="columnSideProvinceB">-충청북도</a>
+                <a href="#" class="columnSideProvinceB">-충청남도</a>
+                <a href="#" class="columnSideProvinceB">-전라북도</a>
+                <a href="#" class="columnSideProvinceB">-전라남도</a>
+                <a href="#" class="columnSideProvinceB">-경상북도</a>
+                <a href="#" class="columnSideProvinceB">-경상남도</a>
+                <a href="#" class="columnSideProvinceB">-제주도</a>
+              </div>
+                
+         </div>
+
+
+       </div>
+
+      
+
+</body>
+</html>
