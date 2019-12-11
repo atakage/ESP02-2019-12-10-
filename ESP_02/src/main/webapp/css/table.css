@@ -28,6 +28,9 @@ table{
     height: 23px;
     
 }
+.detail_table a{
+	text-decoration: none;
+}
 .detail_table td:nth-child(2){
     text-align: left;
 }
