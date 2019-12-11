@@ -246,13 +246,13 @@ td {
 
     </tr>
     <tr class="tr4">
-        <td><img style="height: 3rem;" src="${rootPath}/images/policy_humen1.png"></td>
-        <td><img style="height: 3rem;" src="${rootPath}/images/policy_humen2.png"></td>
-        <td><img style="height: 3rem;" src="${rootPath}/images/policy_humen3.png"></td>
-        <td><img style="height: 3rem;" src="${rootPath}/images/policy_humen4.png"></td>
-        <td><img style="height: 3rem;" src="${rootPath}/images/policy_humen5.png"></td>
-        <td><img style="height: 100px;" src="${rootPath}/images/g.png"></td>
-        <td><img style="height: 100px;" src="${rootPath}/images/d.png"></td>
+        <td><a href="${rootPath}/esp/object"><img style="height: 3rem;" src="${rootPath}/images/policy_humen1.png"></a></td>
+        <td><a href="${rootPath}/esp/object/fmmain"><img style="height: 3rem;" src="${rootPath}/images/policy_humen2.png"></a></td>
+        <td><a href="${rootPath}/esp/object/mdmain"><img style="height: 3rem;" src="${rootPath}/images/policy_humen3.png"></a></td>
+        <td><a href="${rootPath}/esp/object/damain"><img style="height: 3rem;" src="${rootPath}/images/policy_humen4.png"></a></td>
+        <td><a href="${rootPath}/esp/object/frmain"><img style="height: 3rem;" src="${rootPath}/images/policy_humen5.png"></a></td>
+        <td><a href="${rootPath}/esp/area/seoul"><img style="height: 100px;" src="${rootPath}/images/g.png"></a></td>
+        <td><a href="${rootPath}/esp/area/gyeonggi"><img style="height: 100px;" src="${rootPath}/images/d.png"></a></td>
     </tr>
 </table>
 <%@ include file="/WEB-INF/views/include/include-footer.jspf"%>

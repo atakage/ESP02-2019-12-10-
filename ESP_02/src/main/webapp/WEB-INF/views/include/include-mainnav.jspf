@@ -9,7 +9,7 @@
 
 <nav>	
 	<ul id="main-menu">
-		<li class="menu1"><a href="${rootPath}/">사이트소개</a></li>
+		<li class="menu1"><a href="${rootPath}/intro">사이트소개</a></li>
 		<div class="dropdown">
             <li class="menu2"><a href="${rootPath}/esp/object">대상별정책</a></li>
               <div class="dropdown-content">

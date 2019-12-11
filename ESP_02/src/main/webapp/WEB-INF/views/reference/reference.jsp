@@ -19,7 +19,7 @@
 	
     <section class="news_section">
         <article class="body_title">
-            <p> 정책 자료실 </p>
+            <p> 정책자료실 </p>
         <article class="news_search">
             <select name="searchField" class="news_button">
                 <option value="allList" selected="selected">전체</option>

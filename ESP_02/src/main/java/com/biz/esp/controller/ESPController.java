@@ -8,7 +8,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ESPController {
 
-
+//	사이트 소개 페이지
+	@RequestMapping(value="/intro", method=RequestMethod.GET)
+	public String intro(Model model) {
+		
+		return "/intro";
+	}
 //	로그인 페이지
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String login(Model model) {
