@@ -46,6 +46,9 @@
 	height:400px;
 	margin:0 auto;
 }
+.body_content > h2{
+	padding-top: 16px;
+}
 .body_content p{
 	font-size: 16px;
 	padding:8px;
