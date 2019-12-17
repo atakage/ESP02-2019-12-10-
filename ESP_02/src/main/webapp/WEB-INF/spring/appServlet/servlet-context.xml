@@ -25,6 +25,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.biz.esp.controller" />
+	<context:component-scan base-package="com.biz.esp.service" />
 	
 	
 	

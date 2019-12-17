@@ -89,17 +89,7 @@ public class ESPController {
 		return "/news/news_detail";
 	}
 	
-//	정책 자료실 페이지
-	@RequestMapping(value="/reference", method=RequestMethod.GET)
-	public String reference(Model model) {
-		
-		return "/reference/reference";
-	}
-	@RequestMapping(value="/reference/detail", method=RequestMethod.GET)
-	public String referenceDetail(Model model) {
-		
-		return "/reference/reference_detail";
-	}
+
 	
 //	이용약관 페이지
 	@RequestMapping(value="/infouse", method=RequestMethod.GET)

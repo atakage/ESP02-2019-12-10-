@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>취업지원정보 - 소식 세부사항</title>
+<title>취업지원정보 - 정책자료실 세부사항</title>
 <%@ include file="/WEB-INF/views/include/include-title.jspf" %>
 <link rel="stylesheet" href="${rootPath}/css/body.css?ver=20191121001" type="text/css">
 <link rel="stylesheet" href="${rootPath}/css/table.css?ver=20191121001" type="text/css">
