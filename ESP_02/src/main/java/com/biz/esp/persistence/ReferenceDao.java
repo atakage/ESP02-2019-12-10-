@@ -11,6 +11,7 @@ public interface ReferenceDao {
 	public List<ReferenceDTO> selectAll();
 	public ReferenceDTO findById(long d_seq);
 	public List<ReferenceDTO> findByCategory(String m_cat);
+	public List<ReferenceDTO> findByAll(ReferenceDTO referenceDTO);
 	public List<ReferenceDTO> findByTitle(ReferenceDTO referenceDTO);
 	public List<ReferenceDTO> findByContent(ReferenceDTO referenceDTO);
 	

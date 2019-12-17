@@ -4,6 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.biz.esp.domain.ReferenceDTO" alias="referenceDTO"/>	
+		<typeAlias type="com.biz.esp.domain.ReferenceDTO" alias="referenceDTO"/>
+		<typeAlias type="com.biz.esp.domain.OpinionDTO" alias="opinionDTO"/>	
 	</typeAliases>
 </configuration> 

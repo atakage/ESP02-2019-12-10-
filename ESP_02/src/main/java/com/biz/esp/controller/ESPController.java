@@ -1,13 +1,23 @@
 package com.biz.esp.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.biz.esp.domain.OpinionDTO;
+import com.biz.esp.service.OpinionService;
+
 @Controller
 public class ESPController {
 
+	@Autowired
+	OpinionService oService;
+	
 //	사이트 소개 페이지
 	@RequestMapping(value="/intro", method=RequestMethod.GET)
 	public String intro(Model model) {
@@ -107,9 +117,27 @@ public class ESPController {
 	
 //	개선의견 페이지
 	@RequestMapping(value="/opinion", method=RequestMethod.GET)
-	public String opinion(Model model) {
+	public String opinion(OpinionDTO opinionDTO, Model model) {
 		
+		model.addAttribute("oDTO", opinionDTO);
 		return "/infouse/opinion";
+	}
+	
+	@RequestMapping(value="/opinion", method=RequestMethod.POST)
+	public String opinion(OpinionDTO opinionDTO, String strSeq, Model model) {
+		
+		OpinionDTO oDTO = opinionDTO;
+		
+		Date date = new Date();
+		SimpleDateFormat sd = new SimpleDateFormat("yyyy.MM.dd");
+		SimpleDateFormat st = new SimpleDateFormat("HH:mm:ss");
+		
+		String dateD = sd.format(date);
+		st.format(date);
+
+		oDTO.setO_date(dateD);
+		int ret = oService.insert(oDTO);
+		return "redirect:/opinion";
 	}
 	
 }

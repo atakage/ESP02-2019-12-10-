@@ -64,7 +64,7 @@
 								<tr class="content-body"
 										data-id="${vo.d_seq}">
 									<td>${fn:length(RLIST) - count.index}</td>
-									<td>${vo.d_title}</td>
+									<td><a href="#">${vo.d_title}</a></td>
 									<td>${vo.d_writer}</td>
 									<td>${vo.d_date}</td>
 									<td>${vo.d_file}</td>

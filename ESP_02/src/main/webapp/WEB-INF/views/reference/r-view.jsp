@@ -62,9 +62,9 @@ $(function(){
                 </tr>
             </table>
             <article class="news_page_button">
-                <a href="javascript:void(0)" class="btn" id="btn-update">수정</a>
-                <a href="javascript:void(0)" class="btn" id="btn-delete">삭제</a>
-                <a href="${rootPath}/reference/rlist?search="><button>목록</button></a>
+                <a href="javascript:void(0)" class="btn" id="btn-update"><button>수정</button></a>
+                <a href="javascript:void(0)" class="btn" id="btn-delete"><button>삭제</button></a>
+                <a href="${rootPath}/reference/rlist?searchField=&search="><button>목록</button></a>
             </article>
         </article>
     </section>

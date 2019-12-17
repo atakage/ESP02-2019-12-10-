@@ -39,6 +39,7 @@ fieldset div input, fieldset div select, fieldset div textarea {
 	margin: 5px;
 	border: 1px solid #ddd;
 }
+
 </style>
 </head>
 <body>
@@ -63,10 +64,12 @@ fieldset div input, fieldset div select, fieldset div textarea {
 				</div>
 				<div>
 					<label for="d_content">내용</label>
-					<form:textarea path="d_content" rows="8" />
+					<form:textarea path="d_content" rows="20" />
 					<br />
 				</div>
-				<button>저장</button>
+				<div class="news_button_div">
+					<button class="news_button">저장</button>
+				</div>
 			</form:form>
 		</fieldset>
 	</section>

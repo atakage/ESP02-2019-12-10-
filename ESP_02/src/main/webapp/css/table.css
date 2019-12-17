@@ -7,8 +7,7 @@ table{
     border-collapse: collapse;
     border-spacing: 0;
     table-layout: fixed;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    
     white-space: nowrap;
     font-size: 14px;
     text-align: center;
@@ -26,6 +25,8 @@ table{
     padding:12px 10px;
     border-bottom: 1px solid #ccc;
     height: 23px;
+    text-overflow: ellipsis;
+    overflow: hidden;
     
 }
 .detail_table a{
@@ -33,6 +34,9 @@ table{
 }
 .detail_table td:nth-child(2){
     text-align: left;
+}
+.detail_table td:nth-child(2)::hover{
+	cursor: pointer;
 }
 
 #th1{
