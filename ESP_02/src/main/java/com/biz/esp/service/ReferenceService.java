@@ -53,12 +53,24 @@ public class ReferenceService {
 		// TODO Auto-generated method stub
 		return refDao.delete(d_seq);
 	}
-	public List<ReferenceDTO> selectContentSearch(String strText) {
+	public List<ReferenceDTO> selectAllSearch(String searchField, String search) {
 
 		ReferenceDTO referenceDTO = ReferenceDTO.builder()
-								.d_content(strText)
+								.d_title(search)
+								.d_content(search)
 								.build();
-		log.debug("으아아아:"+referenceDTO.getD_content());
+		return refDao.findByAll(referenceDTO);
+	}
+	public List<ReferenceDTO> selectTitle(String search) {
+		ReferenceDTO referenceDTO = ReferenceDTO.builder()
+								.d_title(search)
+								.build();
+		return refDao.findByTitle(referenceDTO);
+	}
+	public List<ReferenceDTO> selectContent(String search) {
+		ReferenceDTO referenceDTO = ReferenceDTO.builder()
+								.d_content(search)
+								.build();
 		return refDao.findByContent(referenceDTO);
 	}
 }

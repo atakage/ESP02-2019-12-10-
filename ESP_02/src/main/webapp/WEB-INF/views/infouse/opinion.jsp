@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="rootPath" value="${pageContext.request.contextPath}"/>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,35 +22,73 @@ $(function(){
 	
 })
 </script>
+<style>
+fieldset div {
+	display: flex;
+}
+
+
+fieldset {
+	width: 70%;
+	border: 1px solid #2f4f4f;
+	margin: 20px auto;
+}
+
+fieldset div label {
+	display: inline-block;
+	width: 20%;
+	padding: 8px;
+	margin: 5px;
+	text-align: right;
+	vertical-align: center;
+}
+
+fieldset div input, fieldset div select, fieldset div textarea {
+	display: inline-block;
+	width: 70%;
+	padding: 8px;
+	margin: 5px;
+	border: 1px solid #ddd;
+}
+.news_button_div{
+	display:flex;
+	justify-content: center;
+}
+
+</style>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include/include-header.jspf" %>
 <%@ include file="/WEB-INF/views/include/include-mainnav.jspf" %>
 <link rel="stylesheet" href="${rootPath}/css/body.css?ver=20191121001"	type="text/css">
-<link rel="stylesheet" href="${rootPath}/css/table.css?ver=20191121001"	type="text/css">
     <section class="news_section">
         <article class="body_title">
             <p>개선의견수렴</p>
         </article>
-        <article class="opinion_table">
-            <table>
-                <tr>
-                    <th>제목</th>
-                    <td><input name="opinion_submit" type="text" placeholder="제목을 입력해주세요"></input></td>
-                </tr>
-                <tr>
-                    <th>이메일</th>
-                    <td><input name="opinion_submit" type="email"  placeholder="이메일을 입력해주세요"></td>
-                </tr>
-                <tr>
-                    <th>내용</th>
-                    <td><input name="opinion_submit" type="text" class="op_input" placeholder="내용을 입력해주세요"></td>
-                </tr>
-            </table>
-            <div>
-                <a href="${rootPath}/opinion"><button class="opinion_insert">등록</button></a>
-            </div>
-        </article>
+        <fieldset>
+        	<form:form modelAttribute="oDTO">
+        	<div>
+					<label for="o_title">제목</label>
+					<form:input path="o_title" placeholder="제목을 입력해주세요" />
+					<br />
+				</div>
+				<div>
+					<label for="o_email">이메일</label>
+					<form:input path="o_email" class="in-box"
+						placeholder="이메일을 꼭 입력해주세요" />
+					<br />
+				</div>
+				<div>
+					<label for="o_content">내용</label>
+					<form:textarea path="o_content" rows="20" />
+					<br />
+				</div>
+				<div class="news_button_div">
+					<a href="${rootPath}/opinion"><button class="news_button">등록</button></a>
+				</div>
+				
+            </form:form>
+            </fieldset>
     </section>
     <%@ include file="/WEB-INF/views/include/include-footer.jspf" %>
 </body>

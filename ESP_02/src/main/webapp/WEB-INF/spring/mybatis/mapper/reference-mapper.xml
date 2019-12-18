@@ -12,12 +12,19 @@
 		SELECT * FROM tbl_policydata WHERE d_seq = #{d_seq} ORDER BY d_seq DESC
 	</select>
 
-	<select id="findByTitle" resultType="referenceDTO">
-		SELECT * FROM tbl_policydata WHERE d_title LIKE '%' || #{d_title} || '%' ORDER BY d_seq DESC
+	<select id="findByAll" resultType="referenceDTO">
+		SELECT * FROM tbl_policydata 
+		WHERE d_title LIKE '%' || #{d_title} || '%' OR d_content LIKE '%' || #{d_content} || '%' ORDER BY d_seq DESC
 	</select>
-
+	
+	<select id="findByTitle" resultType="referenceDTO">
+		SELECT * FROM tbl_policydata 
+		WHERE d_title LIKE '%' || #{d_title} || '%' ORDER BY d_seq DESC
+	</select>
+	
 	<select id="findByContent" resultType="referenceDTO">
-		SELECT * FROM tbl_policydata WHERE d_content LIKE '%' || #{d_content} || '%' ORDER BY d_seq DESC
+		SELECT * FROM tbl_policydata 
+		WHERE d_content LIKE '%' || #{d_content} || '%' ORDER BY d_seq DESC
 	</select>
 
 

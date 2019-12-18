@@ -34,24 +34,37 @@ public class ReferenceController {
 	ReferenceService rService;
 	
 	//	정책 자료실 페이지
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String reference(String search, Model model) {
-		
-		return "/reference/reference";
-	}
-	@RequestMapping(value="/detail", method=RequestMethod.GET)
-	public String referenceDetail(Model model) {
-		
-		return "/reference/reference_detail";
-	}
+//	@RequestMapping(value="/", method=RequestMethod.GET)
+//	public String reference(String search, Model model) {
+//		
+//		return "/reference/reference";
+//	}
+//	@RequestMapping(value="/detail", method=RequestMethod.GET)
+//	public String referenceDetail(Model model) {
+//		
+//		return "/reference/reference_detail";
+//	}
+	
+	// searchField는 카테고리로 전체, 제목, 내용으로 검색할 때 사용하는 부분
 	@RequestMapping(value="/rlist",method=RequestMethod.GET)
-	public String getRList(String search, Model model) {
+	public String getRList(String searchField, String search, Model model) {
+		log.debug("서치필드 값 : "+searchField);
 		List<ReferenceDTO> refList ;
-		if(search.trim() == null || search.isEmpty()) {
+		if(searchField.equalsIgnoreCase("allList")) {
+			// 서비스에서 allList일 때 작동할거 만들어주기
+			refList = rService.selectAllSearch(searchField, search);
+		} else if(searchField.equalsIgnoreCase("title")) {
+			// 제목으로만 검색했을 때
+			refList = rService.selectTitle(search);
+		} else if(searchField.equalsIgnoreCase("content")) {
+			// 내용으로 검색했을 때
+			refList = rService.selectContent(search);
+		} else if(search.trim() == null || search.isEmpty()) {
 			refList = rService.selectAll();
 		} else {
-			refList = rService.selectContentSearch(search);
+			refList = rService.selectAllSearch(searchField, search);
 		}
+		
 		model.addAttribute("RLIST",refList);
 		return "/reference/r-list";
 	}
@@ -95,8 +108,7 @@ public class ReferenceController {
 		rDTO.setD_date(dateD);
 		rDTO.setD_writer("관리자");
 		int ret = rService.insert(referenceDTO);
-
-		return "redirect:/reference/rlist";
+		return "redirect:/reference/rlist?searchField=&search=";
 	}
 	
 	@RequestMapping(value="/update", method=RequestMethod.GET)
@@ -130,13 +142,13 @@ public class ReferenceController {
 //		rDTO.setD_date(dateD);
 //		rDTO.setD_writer("관리자");
 		int ret = rService.update(referenceDTO);
-		return "redirect:/reference/rlist";
+		return "redirect:/reference/rlist?searchField=&search=";
 	}
 
 	@RequestMapping(value="/delete",method=RequestMethod.GET)
 	// public String delete(long m_seq) {	
 	public String delete(@ModelAttribute ReferenceDTO referenceDTO) {
 		int ret = rService.delete(referenceDTO.getD_seq());
-		return "redirect:/reference/rlist";
+		return "redirect:/reference/rlist?searchField=&search=";
 	}
 }
