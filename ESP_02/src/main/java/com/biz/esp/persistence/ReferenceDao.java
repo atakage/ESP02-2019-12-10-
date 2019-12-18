@@ -1,14 +1,13 @@
 package com.biz.esp.persistence;
 
 import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
+import java.util.Map;
 
 import com.biz.esp.domain.ReferenceDTO;
 
 public interface ReferenceDao {
 
-	public List<ReferenceDTO> selectAll();
+	public List<ReferenceDTO> selectAll(Map map);
 	public ReferenceDTO findById(long d_seq);
 	public List<ReferenceDTO> findByCategory(String m_cat);
 	public List<ReferenceDTO> findByAll(ReferenceDTO referenceDTO);

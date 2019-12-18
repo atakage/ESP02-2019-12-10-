@@ -14,6 +14,7 @@
 <%@ include file="/WEB-INF/views/include/include-title.jspf" %>
 <link rel="stylesheet" href="${rootPath}/css/body.css?ver=20191121001" type="text/css">
 <link rel="stylesheet" href="${rootPath}/css/table.css?ver=20191121001" type="text/css">
+<link rel="stylesheet" href="${rootPath}/css/pagination.css?ver=20191121001" type="text/css">
 <script>
 	$(function(){
 		$(".content-body").click(function(){
@@ -63,7 +64,8 @@
 				                	varStatus="count">
 								<tr class="content-body"
 										data-id="${vo.d_seq}">
-									<td>${fn:length(RLIST) - count.index}</td>
+									<td>${vo.d_seq}</td>
+									<!-- <td>${fn:length(RLIST) - count.index}</td> -->
 									<td><a href="#">${vo.d_title}</a></td>
 									<td>${vo.d_writer}</td>
 									<td>${vo.d_date}</td>
@@ -74,17 +76,29 @@
 					</c:choose>
 	            </table>
 	        </div>
-	        <article class="news_page_button">
-	            <button>≪</button>
-	            <button>＜</button>
-	            <button>1</button>
-	            <button>2</button>
-	            <button>3</button>
-	            <button>4</button>
-	            <button>5</button>
-	            <button>＞</button>
-	            <button>≫</button>
-	        </article>
+	        <article class="page-box">
+			<ul class="page-body">
+				<li class="page-item">
+				<a href="${rootPath}/reference/rlist?search=${search}&searchField=${searchField}&currentPageNo=${PAGE.firstPageNo}" class="page-link">&lt;&lt;</a>	
+				
+				<li class="page-item">
+				<a href="${rootPath}/reference/rlist?search=${search}&searchField=${searchField}&currentPageNo=${PAGE.prePageNo}" class="page-link">&lt;</a>
+				
+				<!-- begin ~ end까지 반복 -->
+				<c:forEach begin="${PAGE.startPageNo}" end ="${PAGE.endPageNo}" var="page">
+				<li class="page-item <c:if test="${page == PAGE.currentPageNo}">active</c:if>" >
+				
+				<a href="${rootPath}/reference/rlist?search=${search}&searchField=${searchField}&currentPageNo=${page}" class="page-link">${page}</a>
+				
+				</c:forEach>
+				
+				<li class="page-item">
+				<a href="${rootPath}/reference/rlist?search=${search}&searchField=${searchField}&currentPageNo=${PAGE.nextPageNo}" class="page-link">&gt;</a>
+				<li class="page-item">
+				<a href="${rootPath}/reference/rlist?search=${search}&searchField=${searchField}&currentPageNo=${PAGE.finalPageNo}" class="page-link">&gt;&gt;</a>
+			</ul>
+			</article>
+
         </article>
     </section>
     <%@ include file="/WEB-INF/views/include/include-footer.jspf" %>
