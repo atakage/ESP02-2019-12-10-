@@ -1,7 +1,8 @@
 package com.biz.esp.service;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,10 @@ public class ReferenceService {
 		this.refDao = sqlSession.getMapper(ReferenceDao.class);
 	}
 	// DB를 리스트 통째로 가져오기
-	public List<ReferenceDTO> selectAll(){
-		List<ReferenceDTO> rList = refDao.selectAll();
+	public List<ReferenceDTO> selectAll(long now){
+		Map map = new HashMap();
+		map.put("now", now);
+		List<ReferenceDTO> rList = refDao.selectAll(map);
 		
 		return rList;
 	}

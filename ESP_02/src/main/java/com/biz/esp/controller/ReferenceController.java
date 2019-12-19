@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.biz.esp.domain.ReferenceDTO;
+import com.biz.esp.persistence.PageDTO;
+import com.biz.esp.service.PageService;
 import com.biz.esp.service.ReferenceService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -33,6 +35,9 @@ public class ReferenceController {
 	@Autowired
 	ReferenceService rService;
 	
+	@Autowired
+	PageService pService;
+	
 	//	정책 자료실 페이지
 //	@RequestMapping(value="/", method=RequestMethod.GET)
 //	public String reference(String search, Model model) {
@@ -47,7 +52,7 @@ public class ReferenceController {
 	
 	// searchField는 카테고리로 전체, 제목, 내용으로 검색할 때 사용하는 부분
 	@RequestMapping(value="/rlist",method=RequestMethod.GET)
-	public String getRList(String searchField, String search, Model model) {
+	public String getRList(@RequestParam(value = "currentPageNo", required = false, defaultValue = "1") long currentPageNo, String searchField, String search, Model model) {
 		log.debug("서치필드 값 : "+searchField);
 		List<ReferenceDTO> refList ;
 		if(searchField.equalsIgnoreCase("allList")) {
@@ -60,11 +65,13 @@ public class ReferenceController {
 			// 내용으로 검색했을 때
 			refList = rService.selectContent(search);
 		} else if(search.trim() == null || search.isEmpty()) {
-			refList = rService.selectAll();
+			refList = rService.selectAll(currentPageNo);
 		} else {
 			refList = rService.selectAllSearch(searchField, search);
 		}
-		
+		PageDTO pageDTO = pService.makePagination(100, currentPageNo);
+		model.addAttribute("PAGE", pageDTO);
+		model.addAttribute("currentPageNo", currentPageNo);
 		model.addAttribute("RLIST",refList);
 		return "/reference/r-list";
 	}

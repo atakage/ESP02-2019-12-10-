@@ -4,8 +4,27 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.biz.esp.persistence.ReferenceDao">
-	<select id="selectAll" resultType="referenceDTO">
-		SELECT * FROM tbl_policydata ORDER BY d_seq DESC
+	<select id="selectAll" resultType="referenceDTO" parameterType="map">
+		<![CDATA[
+ 		SELECT * FROM
+		    (
+		        SELECT
+		            A.*,
+		            ROWNUM AS RNUM
+		        FROM
+		            (
+		                SELECT
+		                    *
+		                FROM
+		                    tbl_policydata
+		                ORDER BY
+		                    d_seq DESC
+		
+		            ) A
+		    )
+		WHERE
+		    RNUM > (#{now} -1) *10 AND RNUM <= #{now} * 10 
+	]]>
 	</select>
 
 	<select id="findById" resultType="referenceDTO">
