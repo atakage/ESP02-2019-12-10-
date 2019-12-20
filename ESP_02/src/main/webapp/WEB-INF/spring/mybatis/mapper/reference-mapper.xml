@@ -27,6 +27,10 @@
 	]]>
 	</select>
 
+	<select id="selectFiveList" resultType="referenceDTO">
+		SELECT * FROM tbl_policydata ORDER BY d_seq DESC
+	</select>
+
 	<select id="findById" resultType="referenceDTO">
 		SELECT * FROM tbl_policydata WHERE d_seq = #{d_seq} ORDER BY d_seq DESC
 	</select>

@@ -5,6 +5,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.biz.esp.domain.ReferenceDTO" alias="referenceDTO"/>
-		<typeAlias type="com.biz.esp.domain.OpinionDTO" alias="opinionDTO"/>	
+		<typeAlias type="com.biz.esp.domain.OpinionDTO" alias="opinionDTO"/>
+		<typeAlias type="com.biz.esp.domain.NewsDTO" alias="newsDTO"/>	
 	</typeAliases>
 </configuration> 

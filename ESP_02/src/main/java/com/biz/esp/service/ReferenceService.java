@@ -43,8 +43,11 @@ public class ReferenceService {
 	}
 	public int insert(ReferenceDTO referenceDTO) {
 
-		
-		
+//		ReferenceDTO rDTO = referenceDTO;
+//		String text= rDTO.getD_content();
+//		text = text.replaceAll("\n\r|\r|\n","\n");
+//		rDTO.setD_content(text);
+//		
 		return refDao.insert(referenceDTO);
 	}
 	public int update(ReferenceDTO referenceDTO) {
@@ -75,5 +78,9 @@ public class ReferenceService {
 								.d_content(search)
 								.build();
 		return refDao.findByContent(referenceDTO);
+	}
+	public List<ReferenceDTO> selectFiveList() {
+
+		return refDao.selectFiveList();
 	}
 }

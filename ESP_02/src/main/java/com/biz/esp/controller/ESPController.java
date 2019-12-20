@@ -87,17 +87,7 @@ public class ESPController {
 	
 	*/
 	
-//	소식 페이지
-	@RequestMapping(value="/news", method=RequestMethod.GET)
-	public String news(Model model) {
-		
-		return "/news/news";
-	}
-	@RequestMapping(value="/news/detail", method=RequestMethod.GET)
-	public String newsDetail(Model model) {
-		
-		return "/news/news_detail";
-	}
+
 	
 
 	

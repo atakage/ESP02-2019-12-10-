@@ -8,7 +8,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>취업정책지원사이트</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${rootPath}/css/main.css?ver=2019-11-30-002">
+<script>
+$(function(){
+	$(".ntitle-list").click(function(){
+		let id = $(this).attr("data-id")
+		document.location.href = "${rootPath}/news/view?id=" +id
+	})
+	$(".rtitle-list").click(function(){
+		let id = $(this).attr("data-id")
+		document.location.href = "${rootPath}/reference/view?id=" +id
+	})
+})
+</script>
 </head>
 <style>
 @charset "UTF-8";
@@ -113,6 +126,9 @@ body {
 .tabcontent li{
     padding: 0.6rem;
     white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    
 }
 .tabcontent span{
 	margin: 0 2rem;
@@ -181,19 +197,31 @@ td {
         </div>
         
         <div id="noti" class="tabcontent">
-            <li><a href="#">[공지] 이상의 사라지지 든 이것이다. 열매를 같으며, 바이며, 것이다.</a><span>2019.11.30</span></li>
-            <li><a href="#">[공지] 이상의 사라지지 든 이것이다. 열매를 같으며, 바이며, 것이다.</a><span>2019.11.30</span></li>
-            <li><a href="#">[공지] 이상의 사라지지 든 이것이다. 열매를 같으며, 바이며, 것이다.</a><span>2019.11.30</span></li>
-            <li><a href="#">[공지] 이상의 사라지지 든 이것이다. 열매를 같으며, 바이며, 것이다.</a><span>2019.11.30</span></li>
-            <li><a href="#">[공지] 이상의 사라지지 든 이것이다. 열매를 같으며, 바이며, 것이다.</a><span>2019.11.30</span></li>
+        	<c:choose>
+				<c:when test="${empty NLIST}">
+					<tr><td colspan="5">정책 자료가 없음</td></tr>
+				</c:when>
+				<c:otherwise>
+					<c:forEach items="${NLIST}" begin="0" end="5" step="1" var="vo" 
+		                	>
+						<li class="ntitle-list" data-id="${vo.n_seq}"><a href="#">${vo.n_title}</a><span>${vo.n_date}</span></li>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
         </div>
         
         <div id="news" class="tabcontent">
-            <li><a href="#">[소식] 별과 얼마나 아름답고 무엇이 설산에서 무엇을 그들은 아니다.</a><span>2019.11.30</span></li>
-            <li><a href="#">[소식] 별과 얼마나 아름답고 무엇이 설산에서 무엇을 그들은 아니다.</a><span>2019.11.30</span></li>
-            <li><a href="#">[소식] 별과 얼마나 아름답고 무엇이 설산에서 무엇을 그들은 아니다.</a><span>2019.11.30</span></li>
-            <li><a href="#">[소식] 별과 얼마나 아름답고 무엇이 설산에서 무엇을 그들은 아니다.</a><span>2019.11.30</span></li>
-            <li><a href="#">[소식] 별과 얼마나 아름답고 무엇이 설산에서 무엇을 그들은 아니다.</a><span>2019.11.30</span></li>
+            <c:choose>
+				<c:when test="${empty RLIST}">
+					<tr><td colspan="5">정책 자료가 없음</td></tr>
+				</c:when>
+				<c:otherwise>
+					<c:forEach items="${RLIST}" begin="0" end="4" step="1" var="vo" 
+		                	>
+						<li class="rtitle-list" data-id="${vo.d_seq}"><a href="#">${vo.d_title}</a><span>${vo.d_date}</span></li>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
         </div>
     </ul>
   
