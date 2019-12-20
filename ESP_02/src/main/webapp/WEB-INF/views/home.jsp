@@ -119,16 +119,29 @@ body {
   border-top: none;
   list-style: none;
   
+  width:500px;
   height: 200px;
   text-align: left;
   font-size: 15px;
 }
-.tabcontent li{
+.tabcontent td{
     padding: 0.6rem;
     white-space: nowrap;
-    overflow:hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
-    
+}
+.table-box{
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.insert-date{
+	width:90px;
+}
+.ntitle-list{
+	text-align: left;
+}
+.rtitle-list{
+	text-align: left;
 }
 .tabcontent span{
 	margin: 0 2rem;
@@ -202,12 +215,17 @@ td {
 					<tr><td colspan="5">정책 자료가 없음</td></tr>
 				</c:when>
 				<c:otherwise>
-					<c:forEach items="${NLIST}" begin="0" end="5" step="1" var="vo" 
-		                	>
-						<li class="ntitle-list" data-id="${vo.n_seq}"><a href="#">${vo.n_title}</a><span>${vo.n_date}</span></li>
-					</c:forEach>
+					<table class="table-box" border="0">		
+						<c:forEach items="${NLIST}" begin="0" end="4" step="1" var="vo">
+		                	<tr>
+								<td class="ntitle-list" data-id="${vo.n_seq}"><a href="#">${vo.n_title}</a></td>
+								<td class="insert-date">${vo.n_date}</td>
+							<tr>
+						</c:forEach>
+					</table>
 				</c:otherwise>
 			</c:choose>
+
         </div>
         
         <div id="news" class="tabcontent">
@@ -216,10 +234,14 @@ td {
 					<tr><td colspan="5">정책 자료가 없음</td></tr>
 				</c:when>
 				<c:otherwise>
-					<c:forEach items="${RLIST}" begin="0" end="4" step="1" var="vo" 
-		                	>
-						<li class="rtitle-list" data-id="${vo.d_seq}"><a href="#">${vo.d_title}</a><span>${vo.d_date}</span></li>
-					</c:forEach>
+					<table class="table-box" border="0">		
+						<c:forEach items="${RLIST}" begin="0" end="4" step="1" var="vo">
+		                	<tr>
+								<td class="rtitle-list" data-id="${vo.d_seq}"><a href="#">${vo.d_title}</a></td>
+								<td class="insert-date">${vo.d_date}</td>
+							<tr>
+						</c:forEach>
+					</table>
 				</c:otherwise>
 			</c:choose>
         </div>
