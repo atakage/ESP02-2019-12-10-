@@ -7,6 +7,7 @@ import com.biz.esp.domain.ReferenceDTO;
 
 public interface ReferenceDao {
 
+	public List<ReferenceDTO> selectFiveList();
 	public List<ReferenceDTO> selectAll(Map map);
 	public ReferenceDTO findById(long d_seq);
 	public List<ReferenceDTO> findByCategory(String m_cat);

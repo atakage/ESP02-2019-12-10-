@@ -8,30 +8,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>취업지원정보 - 정책자료실 세부사항</title>
+<title>취업지원정보 - 소식 세부사항</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <%@ include file="/WEB-INF/views/include/include-title.jspf" %>
 <link rel="stylesheet" href="${rootPath}/css/body.css?ver=20191121001" type="text/css">
 <link rel="stylesheet" href="${rootPath}/css/table.css?ver=20191121001" type="text/css">
 <style>
-#rcontent{
+#ncontent{
 	white-space: pre-line;
 }
-
 </style>
 </head>
-
 <script>
 $(function(){
 	$("#btn-update").on("click",function(){
 		
-		document.location.href = "${rootPath}/reference/update?id=${rDTO.d_seq}"
+		document.location.href = "${rootPath}/news/update?id=${nDTO.n_seq}"
 		
 	})
 	
 	$("#btn-delete").click(function(){
 		if(confirm("삭제하시겠습니까?")){
-			let query = "${rootPath}/reference/delete?d_seq=${rDTO.d_seq}"
+			let query = "${rootPath}/news/delete?d_seq=${nDTO.n_seq}"
 			document.location.replace(query)
 		}
 	})
@@ -44,23 +42,23 @@ $(function(){
 	
 	<section class="news_section">
         <article class="body_title">
-            <p> 정책자료실 </p>
+            <p> 소개 </p>
         </article>
         <article class="news_detail">
             <table border="1">
                 <tr>
                     <th>제목</th>
-                    <td colspan="3">${rDTO.d_title}</td>
+                    <td colspan="3">${nDTO.n_title}</td>
                 </tr>
                 <tr>
                     <th>작성자</th>
-                    <td>${rDTO.d_writer}</td>
+                    <td>${nDTO.n_writer}</td>
                     <th>등록일</th>
-                    <td>${rDTO.d_date}</td>
+                    <td>${nDTO.n_date}</td>
                 </tr>
             </table>
-            <div id="rcontent">
-				${rDTO.d_content}
+            <div id="ncontent">
+				${nDTO.n_content}
             </div>
             <table border="1">
                 <tr class="news_detail_file">
@@ -71,7 +69,7 @@ $(function(){
             <article class="news_page_button">
                 <a href="javascript:void(0)" class="btn" id="btn-update"><button>수정</button></a>
                 <a href="javascript:void(0)" class="btn" id="btn-delete"><button>삭제</button></a>
-                <a href="${rootPath}/reference/rlist?searchField=&search="><button>목록</button></a>
+                <a href="${rootPath}/news/nlist?searchField=&search="><button>목록</button></a>
             </article>
         </article>
     </section>
