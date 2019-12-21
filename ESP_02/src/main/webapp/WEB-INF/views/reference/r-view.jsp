@@ -65,7 +65,7 @@ $(function(){
             <table border="1">
                 <tr class="news_detail_file">
                     <th>첨부파일</th>
-                    <td>파일 링크</td>
+                    <td>${rDTO.d_file}</td>
                 </tr>
             </table>
             <article class="news_page_button">

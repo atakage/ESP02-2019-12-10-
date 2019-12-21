@@ -11,8 +11,12 @@
 		<li class="privacy"><a href="${rootPath}/privacy">개인정보처리방침</a></li>
 		<li class="opinion"><a href="${rootPath}/opinion">개선의견수렴</a></li>
 	</ul>
-	<div id="footer-bottom">취업지원정책 연락처~~</div>
+	<div id="footer-bottom">
+	<p>Employment Support Policy<br/><br/>
+	광주광역시 북구 중흥1동 경양로 170 한국경영원 인재개발원 505</p>
+	
+	</div>
 	<ul>
-		<li>CopyRight &copy; 우리</li>
+		<li>CopyRight &copy; bjmin17@naver.com doolybom1@google.com akatoka@naver.com</li>
 	</ul>
 </footer>

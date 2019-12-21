@@ -9,7 +9,7 @@ footer ul, #footer-bottom{
   margin: 0;
   padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   list-style: none;
 }
 

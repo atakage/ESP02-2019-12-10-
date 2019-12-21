@@ -266,11 +266,10 @@ td {
   document.getElementById("defaultOpen").click();
   </script>
 
-
-	<video width="470" height="280" controls>
-		<source src="#" type="video/mp4">
-		브라우저에서 지원되는 포맷이 아닙니다.
-    </video>
+<div style="margin-left:10px">
+	<iframe width="452" height="282" src="https://www.youtube.com/embed/CmpO6FY2oXo" frameborder="0" allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+	
 </article>
 
 
@@ -296,13 +295,13 @@ td {
 
     </tr>
     <tr class="tr4">
-        <td><a href="${rootPath}/esp/object"><img style="height: 3rem;" src="${rootPath}/images/policy_humen1.png"></a></td>
-        <td><a href="${rootPath}/esp/object/fmmain"><img style="height: 3rem;" src="${rootPath}/images/policy_humen2.png"></a></td>
-        <td><a href="${rootPath}/esp/object/mdmain"><img style="height: 3rem;" src="${rootPath}/images/policy_humen3.png"></a></td>
-        <td><a href="${rootPath}/esp/object/damain"><img style="height: 3rem;" src="${rootPath}/images/policy_humen4.png"></a></td>
-        <td><a href="${rootPath}/esp/object/frmain"><img style="height: 3rem;" src="${rootPath}/images/policy_humen5.png"></a></td>
-        <td><a href="${rootPath}/esp/area/seoul"><img style="height: 100px;" src="${rootPath}/images/g.png"></a></td>
-        <td><a href="${rootPath}/esp/area/gyeonggi"><img style="height: 100px;" src="${rootPath}/images/d.png"></a></td>
+        <td onClick="location.href='${rootPath}/esp/object'"><img style="height: 3rem;" src="${rootPath}/images/policy_humen1.png"></td>
+        <td onClick="location.href='${rootPath}/esp/object/fmmain'"><img style="height: 3rem;" src="${rootPath}/images/policy_humen2.png"></td>
+        <td onClick="location.href='${rootPath}/esp/object/mdmain'"><img style="height: 3rem;" src="${rootPath}/images/policy_humen3.png"></td>
+        <td onClick="location.href='${rootPath}/esp/object/damain'"><img style="height: 3rem;" src="${rootPath}/images/policy_humen4.png"></td>
+        <td onClick="location.href='${rootPath}/esp/object/frmain'"><img style="height: 3rem;" src="${rootPath}/images/policy_humen5.png"></td>
+        <td onClick="location.href='${rootPath}/esp/area/seoul'"><img style="height: 100px;" src="${rootPath}/images/g.png"></td>
+        <td onClick="location.href='${rootPath}/esp/area/gyeonggi'"><img style="height: 100px;" src="${rootPath}/images/d.png"></td>
     </tr>
 </table>
 <%@ include file="/WEB-INF/views/include/include-footer.jspf"%>

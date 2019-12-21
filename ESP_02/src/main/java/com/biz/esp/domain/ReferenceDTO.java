@@ -17,6 +17,7 @@ import lombok.ToString;
 public class ReferenceDTO {
 
 	private long d_seq;//	number
+	private long rnum;
 	private String d_title;//	nvarchar2(125 char)
 	private String d_content;//	nvarchar2(1000 char)
 	private String d_writer;//	nvarchar2(25 char)

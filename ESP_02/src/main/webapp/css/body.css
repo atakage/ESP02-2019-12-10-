@@ -68,7 +68,7 @@
 .news_page_button button:hover{
     border:1px solid rgb(12, 93, 139);
     cursor: pointer;
-    color: white;
+    font-weight: bold;
 }
 .news_section{
 }
