@@ -118,6 +118,16 @@ public class ESPController {
 		
 		OpinionDTO oDTO = opinionDTO;
 		
+		if(oDTO.getO_title().isEmpty()) {
+	         oDTO.setO_title("기본 제목 형식");
+	      }
+	      if(oDTO.getO_email().isEmpty()) {
+	         oDTO.setO_email("기본 제목 형식");
+	      }
+	      if(oDTO.getO_content().isEmpty()) {
+	         oDTO.setO_content("기본 내용 형식");
+	      }
+		
 		Date date = new Date();
 		SimpleDateFormat sd = new SimpleDateFormat("yyyy.MM.dd");
 		SimpleDateFormat st = new SimpleDateFormat("HH:mm:ss");
