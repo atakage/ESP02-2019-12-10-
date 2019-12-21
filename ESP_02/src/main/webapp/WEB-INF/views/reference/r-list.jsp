@@ -64,6 +64,7 @@
 				                	varStatus="count">
 								<tr class="content-body"
 										data-id="${vo.d_seq}">
+										
 									<td>${vo.d_seq}</td>
 									<!-- <td>${fn:length(RLIST) - count.index}</td> -->
 									<td><a href="#">${vo.d_title}</a></td>
