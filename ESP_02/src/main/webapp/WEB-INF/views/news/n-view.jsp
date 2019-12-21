@@ -42,7 +42,7 @@ $(function(){
 	
 	<section class="news_section">
         <article class="body_title">
-            <p> 소개 </p>
+            <p> 소식 </p>
         </article>
         <article class="news_detail">
             <table border="1">
