@@ -4,13 +4,21 @@ footer{
 	margin: 30px 0;
 }
 
-footer ul, #footer-bottom{
+footer ul{
   background-color: #dbdbdb;
   margin: 0;
   padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content:center;
   list-style: none;
+}
+#footer-bottom{
+background-color: #dbdbdb;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  justify-content:left;
+  list-style: none;	
 }
 
 footer ul a{

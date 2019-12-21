@@ -19,11 +19,10 @@
 		                    tbl_policydata
 		                ORDER BY
 		                    d_seq DESC
-		
 		            ) A
 		    )
 		WHERE
-		    RNUM > (#{now} -1) *10 AND RNUM <= #{now} * 10 
+		    RNUM > (#{now} -1) *10 AND RNUM <= #{now} * 10
 	]]>
 	</select>
 
