@@ -266,11 +266,10 @@ td {
   document.getElementById("defaultOpen").click();
   </script>
 
-
-	<video width="470" height="280" controls>
-		<source src="#" type="video/mp4">
-		브라우저에서 지원되는 포맷이 아닙니다.
-    </video>
+<div style="margin-left:10px">
+	<iframe width="452" height="281" src="https://www.youtube.com/embed/CmpO6FY2oXo" frameborder="0" allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+	
 </article>
 
 
