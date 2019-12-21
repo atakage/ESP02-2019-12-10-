@@ -109,6 +109,13 @@ public class NewsController {
 	public String insert(@ModelAttribute("newsDTO") NewsDTO newsDTO, String search, Model model) {
 		NewsDTO nDTO = newsDTO;
 		
+		if(nDTO.getN_title().isEmpty()) {
+	         nDTO.setN_title("기본 제목 형식");
+	      }
+	      if(nDTO.getN_content().isEmpty()) {
+	         nDTO.setN_content("기본 내용 형식");
+	      }
+		
 		Date date = new Date();
 		SimpleDateFormat sd = new SimpleDateFormat("yyyy.MM.dd");
 		SimpleDateFormat st = new SimpleDateFormat("HH:mm:ss");
