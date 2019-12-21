@@ -14,7 +14,7 @@
 <script>
 $(function(){
 	
-	$(".opinion_insert").click(function(e){
+	$(".news_button").click(function(e){
 		alert("등록되었습니다.")
 	})
 	
