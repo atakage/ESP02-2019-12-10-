@@ -2,7 +2,7 @@ package com.biz.esp.service;
 
 import org.springframework.stereotype.Service;
 
-import com.biz.esp.persistence.PageDTO;
+import com.biz.esp.domain.PageDTO;
 
 @Service
 public class PageService {

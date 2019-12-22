@@ -31,24 +31,6 @@ public class ESPController {
 		return "/login/login";
 	}
 	
-//	회원가입 페이지
-	@RequestMapping(value="/join", method=RequestMethod.GET)
-	public String join_personal(Model model) {
-		
-		return "/join/personal_info_agree";
-	}
-	@RequestMapping(value="/join/agree", method=RequestMethod.GET)
-	public String joinAgree(Model model) {
-		
-		return "/join/personal_info_agree";
-	}
-	@RequestMapping(value="/join/join", method=RequestMethod.GET)
-	public String join(Model model) {
-		
-		return "/join/join";
-	}
-	
-	
 	
 	/*															--- 외부 컨트롤러로 뺌
 	

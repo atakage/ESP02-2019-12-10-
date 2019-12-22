@@ -31,6 +31,6 @@
 		<li class="menu4"><a href="${rootPath}/news/nlist?searchField=&search=">소식</a></li>
 		<li class="menu5"><a href="${rootPath}/reference/rlist?searchField=&search=">정책자료실</a></li>
 		<li class="login"><a href="${rootPath}/login">로그인</a></li>
-		<li class="join"><a href="${rootPath}/join">회원가입</a></li>
+		<li class="join"><a href="${rootPath}/user/personal_info_agree">회원가입</a></li>
 	</ul>
 </nav>	

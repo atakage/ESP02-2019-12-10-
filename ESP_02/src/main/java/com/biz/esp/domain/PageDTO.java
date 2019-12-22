@@ -1,4 +1,4 @@
-package com.biz.esp.persistence;
+package com.biz.esp.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

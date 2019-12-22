@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import com.biz.esp.domain.PageDTO;
 import com.biz.esp.domain.ReferenceDTO;
-import com.biz.esp.persistence.PageDTO;
 import com.biz.esp.service.PageService;
 import com.biz.esp.service.ReferenceService;
 
