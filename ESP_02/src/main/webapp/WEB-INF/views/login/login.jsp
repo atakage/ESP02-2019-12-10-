@@ -89,7 +89,7 @@
             </ul>
             
             <div>
-                <a href="${rootPath}/join/agree">회원가입</a>
+                <a href="${rootPath}/user/personal_info_agree">회원가입</a>
                 <a href="">아이디찾기</a>
                 <a href="">비밀번호찾기</a>
             </div>
