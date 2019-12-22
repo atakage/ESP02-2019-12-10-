@@ -97,13 +97,20 @@ public class ReferenceController {
 	@RequestMapping(value="/insert",method=RequestMethod.GET)
 	public String insert(@ModelAttribute("referenceDTO") ReferenceDTO referenceDTO, Model model) {
 
-
 		model.addAttribute("rDTO",referenceDTO);
 		return "/reference/r-input";
 	}
 	@RequestMapping(value="/insert",method=RequestMethod.POST)
 	public String insert(@ModelAttribute("referenceDTO") ReferenceDTO referenceDTO, String search, Model model) {
 		ReferenceDTO rDTO = referenceDTO;
+		
+		if(rDTO.getD_title().isEmpty()) {
+	         rDTO.setD_title("기본 제목 형식");
+	      }
+	      if(rDTO.getD_content().isEmpty()) {
+	         rDTO.setD_content("기본 내용 형식");
+	      }
+	      
 		
 		Date date = new Date();
 		SimpleDateFormat sd = new SimpleDateFormat("yyyy.MM.dd");

@@ -96,6 +96,7 @@
 .news_detail div{
     width:70%;
     height: 400px;
+    overflow-y:scroll;
     margin:0 auto;
 }
 .news_detail_file th{
